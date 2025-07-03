@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Add New Contact</h2>
+
+    <form id="addContactForm">
+        <label for="firstname">Firstname</label>
+        <input type="text" name="firstname" id="firstname" required><br/>
+
+        <label for="lastname">Lastname</label>
+        <input type="text" name="lastname" id="lastname" required><br/>
+
+        <label for="mobile">Mobile</label>
+        <input type="tel" name="mobile" id="mobile" required><br/>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required><br/>
+
+        <label for="avatar">Avatar</label>
+        <input type="file" name="avatar" id="avatar"><br/>
+
+        <button type="submit">Add Contact</button>
+    </form>
+
+    <br/>
+    <button id="homeLink">Home</button>
+
+    <script>
+        document.getElementById('addContactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+
+            console.log('New contact added:', Object.fromEntries(formData.entries()));
+
+
+            alert('Contact added!');
+            this.reset();
+        });
+
+        document.getElementById('homeLink').addEventListener('click', function() {
+            window.location.href = 'index.html'; 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <br/>
+
+    <form id="editContactForm">
+        <label for="firstname">Firstname</label>
+        <input type="text" name="firstname" id="firstname"><br/>
+
+        <label for="lastname">Lastname</label>
+        <input type="text" name="lastname" id="lastname"><br/>
+
+        <label for="mobile">Mobile</label>
+        <input type="text" name="mobile" id="mobile"><br/>
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email"><br/>
+
+        <label for="avatar">Avatar</label>
+        <input type="file" name="avatar" id="avatar"><br/>
+
+        <button type="submit" id="submitForm">Submit</button>
+    </form>
+
+    <br/>
+
+    <button id="homeLink">Home</button>
+
+    <script>
+        // Optional: Handle form submission
+        document.getElementById('editContactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Collect form data and prepare for submission
+            const formData = new FormData(this);
+            console.log('Form data submitted:', Object.fromEntries(formData.entries()));
+            // You can now send `formData` using fetch to your backend
+        });
+
+        // Optional: Handle Home button navigation
+        document.getElementById('homeLink').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Change this if your homepage has a different path
+        });
+    </script>
+</body>
+</html>
